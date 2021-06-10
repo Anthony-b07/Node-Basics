@@ -36,6 +36,8 @@ function onDataReceived(text) {
     quit();
   } else if (text === "hello\n") {
     hello();
+  } else if (text === "help\n") {
+    help();
   } else {
     unknownCommand(text);
   }
@@ -59,6 +61,13 @@ function unknownCommand(c) {
  */
 function hello() {
   console.log("hello!");
+}
+function help() {
+  console.log(`
+  1.quit
+  2.hello
+  3.helo
+  4.unknown Command`);
 }
 
 /**
