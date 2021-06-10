@@ -62,6 +62,12 @@ function unknownCommand(c) {
 function hello() {
   console.log("hello!");
 }
+
+/**
+ * List all the commands
+ *
+ * @returns {void}
+ */
 function help() {
   console.log(`
   1.quit
