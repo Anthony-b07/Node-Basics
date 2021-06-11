@@ -60,7 +60,7 @@ function unknownCommand(c) {
  * @returns {void}
  */
 function hello(text) {
-  let txt = text.replace(/ +/, " ");
+  let txt = text.replace(/+/, " ");
   let t = txt.trim() + "!";
   console.log(t);
 }
@@ -71,11 +71,12 @@ function hello(text) {
  * @returns {void}
  */
 function help() {
+  let exp = "!";
   console.log(`
-  1.quit
-  2.hello
-  3.helo
-  4.unknown Command`);
+  1.quit${exp}
+  2.hello${exp}
+  3.helo${exp}
+  4.unknown Command${exp}`);
 }
 
 /**
