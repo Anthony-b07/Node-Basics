@@ -93,7 +93,7 @@ function getList() {
 
 function add(text) {
   if (text.slice(0, 3) == "") {
-    console.log("This number does not exists");
+    console.log("error");
   } else {
     list.push(text);
   }
@@ -101,7 +101,7 @@ function add(text) {
 
 function removeFromList(text) {
   if (list.length <= text) {
-    console.log("error");
+    console.log("this number does not exists");
   }
   list.splice(text + 1, 1);
 }
