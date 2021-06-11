@@ -102,22 +102,19 @@ function add(text) {
 }
 
 function removeFromList(text) {
-  if (list.length <= text) {
+  if (list.length + 1 <= text) {
     console.log("this number does not exists");
   }
-  list.splice(text + 1, 1);
+  list.splice(text - 1, 1);
 }
 
 function editList(text) {
-  let you = text.split(" ");
-  if (!you[0]) {
-    console.log("1");
-    console.log("error");
-  } else if (you[0] === Number) {
-    console.log("2");
-    list.splice(you[0], 1, you[1]);
+  let txt = text.split(" ");
+  if (text != parseInt(txt[0])) {
+    console.log("ERROR");
   } else {
-    list.splice(-0, 0, you);
+    removeFromList(text);
+    add(text);
   }
 }
 
