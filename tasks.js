@@ -93,7 +93,7 @@ function getList() {
 
 function add(text) {
   if (text.slice(0, 3) == "") {
-    console.log("error");
+    console.log("This number does not exists");
   } else {
     list.push(text);
   }
