@@ -40,6 +40,8 @@ function onDataReceived(text) {
     help();
   } else if (text.match(/list/)) {
     getList();
+  } else if (text.slice(0, 6) === "remove") {
+    removeFromList(text.slice(6));
   } else if (text.slice(0, 3) === "add") {
     add(text.substring(3).trim());
   } else {
@@ -94,6 +96,13 @@ function add(text) {
   } else {
     list.push(text);
   }
+}
+
+function removeFromList(text) {
+  if (list.length <= text) {
+    console.log("error");
+  }
+  list.splice(text + 1, 1);
 }
 /**
  * Exits the application
