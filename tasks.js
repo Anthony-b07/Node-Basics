@@ -36,8 +36,10 @@ function onDataReceived(text) {
     quit();
   } else if (text.match(/hello/)) {
     hello(text);
-  } else if (text === "help\n") {
+  } else if (text === "help") {
     help();
+  } else if (text.match(/list/)) {
+    getList();
   } else {
     unknownCommand(text);
   }
@@ -77,6 +79,12 @@ function help() {
   2.hello${exp}
   3.helo${exp}
   4.unknown Command${exp}`);
+}
+function getList() {
+  let list = ["sleep", "codi", "eat", "repeat"];
+  for (let i = 1; i <= list.length; i++) {
+    console.log(i + "-" + list[i]);
+  }
 }
 
 /**
