@@ -82,8 +82,9 @@ function help() {
   1.quit${exp}
   2.hello${exp}
   3.helo${exp}
-  5.add${exp}
-  4.unknown Command${exp}`);
+  4.add${exp}
+  5.remove${exp}
+  6.unknown Command${exp}`);
 }
 const list = ["eat", "sleep", "repeat"];
 function getList() {
