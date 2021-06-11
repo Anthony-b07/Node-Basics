@@ -32,14 +32,16 @@ function startApp(name) {
  * @returns {void}
  */
 function onDataReceived(text) {
-  if (text === "quit\n" || text === "exit\n") {
+  if (text.match(/quit/) || text.match(/exit/)) {
     quit();
   } else if (text.match(/hello/)) {
     hello(text);
-  } else if (text === "help") {
+  } else if (text.match(/help/)) {
     help();
   } else if (text.match(/list/)) {
     getList();
+  } else if (text.slice(0, 3) === "add") {
+    add(text.substring(3).trim());
   } else {
     unknownCommand(text);
   }
@@ -78,15 +80,21 @@ function help() {
   1.quit${exp}
   2.hello${exp}
   3.helo${exp}
+  5.add${exp}
   4.unknown Command${exp}`);
 }
+const list = ["eat", "sleep", "repeat"];
 function getList() {
-  let list = ["sleep", "codi", "eat", "repeat"];
-  for (let i = 1; i <= list.length; i++) {
-    console.log(i + "-" + list[i]);
-  }
+  for (let i = 0; i < list.length; i++) console.log(i + 1 + "-" + list[i]);
 }
 
+function add(text) {
+  if (text.slice(0, 3) == "") {
+    console.log("error");
+  } else {
+    list.push(text);
+  }
+}
 /**
  * Exits the application
  *
