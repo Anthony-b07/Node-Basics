@@ -44,6 +44,8 @@ function onDataReceived(text) {
     removeFromList(text.slice(6));
   } else if (text.slice(0, 3) === "add") {
     add(text.substring(3).trim());
+  } else if (text.slice(0, 4) === "edit") {
+    editList(text.slice(4).trim());
   } else {
     unknownCommand(text);
   }
@@ -105,6 +107,20 @@ function removeFromList(text) {
   }
   list.splice(text + 1, 1);
 }
+
+function editList(text) {
+  let you = text.split(" ");
+  if (!you[0]) {
+    console.log("1");
+    console.log("error");
+  } else if (you[0] === Number) {
+    console.log("2");
+    list.splice(you[0], 1, you[1]);
+  } else {
+    list.splice(-0, 0, you);
+  }
+}
+
 /**
  * Exits the application
  *
